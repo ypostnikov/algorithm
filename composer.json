@@ -1,0 +1,20 @@
+{
+  "authors": [
+    {
+      "name": "Yurii Postnikov",
+      "email": "m.yuri-postnikov@yandex.ru"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src"
+    ]
+  },
+  "description": "Algorithms example",
+  "name": "ypostnikov/exchange",
+  "require": {
+    "php": ">=7.3.0",
+    "guzzlehttp/guzzle": "^6.5"
+  },
+  "type": "project"
+}
