@@ -2,7 +2,7 @@
   "authors": [
     {
       "name": "Yurii Postnikov",
-      "email": "m.yuri-postnikov@yandex.ru"
+      "email": "packadge@gmail.com"
     }
   ],
   "autoload": {
@@ -13,7 +13,7 @@
   "description": "Algorithms example",
   "name": "ypostnikov/exchange",
   "require": {
-    "php": ">=7.3.0",
+    "php": ">=7.4",
     "guzzlehttp/guzzle": "^6.5"
   },
   "type": "project"

@@ -3,7 +3,7 @@
 **<h2>Requirements</h2>**
 - docker, docker-compose
 - composer 
-- php >=7.3
+- php >=7.4
 
 **<h3>Install</h3>** 
 

@@ -1,13 +1,18 @@
 <?php
+
+declare(strict_types = 1);
+
 require __DIR__ . '/vendor/autoload.php';
 
-const BIG = 10;
+
+const BIG = 10000;
 $ordered_arr = [];
 $i = 0;
 while ($i <= BIG) {
     $ordered_arr[$i] = $i;
     $i++;
 }
+
 $searched = rand(1, BIG);
 $numbers = range(1, BIG);
 shuffle($numbers);
@@ -16,9 +21,11 @@ linear_search($ordered_arr, $searched);
 
 binary_search($ordered_arr, $searched);
 
-$sorted = sortSelect($numbers);
-var_dump($sorted);
-
+/**
+ * @param array $arr
+ * @param int $search
+ * @return void
+ */
 function linear_search(array $arr, int $search): void
 {
     //O(n)
@@ -34,6 +41,11 @@ function linear_search(array $arr, int $search): void
     }
 }
 
+/**
+ * @param array $arr
+ * @param int $search
+ * @return int|null
+ */
 function binary_search(array $arr, int $search): ?int
 {
     //O(log n)
@@ -49,7 +61,7 @@ function binary_search(array $arr, int $search): ?int
         if ($guess == $search) {
             $time = round(microtime(true) - $start, 6);
             echo "Find key: {$mid}.Search:{$search}.Time: {$time}.Iter:{$i}";
-            return $mid;
+            return (int)$mid;
         }
         if ($guess > $search) {
             $high = $mid - 1;

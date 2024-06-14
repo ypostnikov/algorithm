@@ -1,4 +1,5 @@
 vendor
+src
 .idea
 .editorconfig
 .gitattributes
