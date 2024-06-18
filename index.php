@@ -1,9 +1,8 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
-
 
 const BIG = 10000;
 $ordered_arr = [];
@@ -20,6 +19,12 @@ shuffle($numbers);
 linear_search($ordered_arr, $searched);
 
 binary_search($ordered_arr, $searched);
+
+$d = new \src\Tricks();
+$f = $d->fact(5);
+echo "<div>Factorail {$f} </div>";
+$sortArr = $d->quicksort([87,56,4,3,2,178,6,1,789]);
+var_dump ($sortArr);
 
 /**
  * @param array $arr
