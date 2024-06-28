@@ -2,7 +2,7 @@
 
 FROM php:7.4-fpm
 
-LABEL description="Exchange test project"
+LABEL description="Algorithms and data structure project"
 
 # Arguments defined in docker-compose.yml
 ARG user
