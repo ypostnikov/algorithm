@@ -5,7 +5,11 @@ declare (strict_types=1);
 namespace src;
 
 use src\Structure\ListNode;
+use src\Structure\TreeNode;
 
+/**
+ *
+ */
 final class LetCode
 {
 
@@ -15,7 +19,7 @@ final class LetCode
      * @param int $target
      * @return array|int[]
      */
-    function twoSum(array $nums, int $target): array
+    public  function twoSum(array $nums, int $target): array
     {
         $len = count($nums);
         for ($i = 0; $i < $len; $i++) {
@@ -26,7 +30,7 @@ final class LetCode
             if ($len == 2 && $nums[1] == $div) {
                 return [0, 1];
             }
-            if($searchedIndex == $i && $common == 1) {
+            if ($searchedIndex == $i && $common == 1) {
                 continue;
             }
             if ($searchedIndex == 0 && $i != $len - 1 && $common == 1) {
@@ -52,7 +56,7 @@ final class LetCode
      * @param string $str
      * @return bool
      */
-    function validParentheses(string $str): bool
+    public function validParentheses(string $str): bool
     {
         $stack = new \SplStack();
         $accordance = [
@@ -88,7 +92,7 @@ final class LetCode
      * @param ListNode $list2
      * @return ListNode
      */
-    function mergeTwoLists(ListNode $list1, ListNode $list2)
+    public  function mergeTwoLists(ListNode $list1, ListNode $list2)
     {
         $head = $list = new ListNode();
 
@@ -105,4 +109,43 @@ final class LetCode
 
         return $head->next;
     }
+
+    /**
+     * @info https://leetcode.com/problems/valid-palindrome/
+     * @param String $s
+     * @return Boolean
+     */
+    public  function isPalindrome(string $s): bool
+    {
+        $cleared = strtolower(preg_replace('/[^a-z0-9 ]/i', '', $s));
+        $cleared = preg_replace('/\s+/', '', $cleared);
+        $len = strlen($cleared);
+        $str = "";
+        for ($i = ($len - 1); $i >= 0; $i--) {
+            $str .= $cleared[$i];
+        }
+        return $cleared === $str;
+    }
+
+    /**
+     * @info @info https://leetcode.com/problems/invert-binary-tree/
+     * @param TreeNode $root
+     * @return TreeNode|null
+     */
+    public function invertTree(TreeNode $root): ?TreeNode
+    {
+        if (!$root) {
+            return $root;
+        }
+        //Логика.Поменять левую и правые части, рекурсивно инвертировав
+        //Бинарное дерево (левая/правая часть)
+        $sourceLeft = $root->left;
+        $sourceRight = $root->right;
+
+        $root->left = $this->invertTree($sourceRight);
+        $root->right = $this->invertTree($sourceLeft);
+
+        return $root;
+    }
+
 }
