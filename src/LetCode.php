@@ -179,4 +179,45 @@ final class LetCode
             return null;
         }
     }
+
+
+    /**
+     * $info https://leetcode.com/problems/valid-anagram/
+     * @param String $s
+     * @param String $t
+     * @return Boolean
+     */
+    function isAnagram(string $s, string $t): bool {
+
+        $len = strlen($t);
+        if ($len != strlen($s)) {
+            return false;
+        }
+
+        //solution 1 - best
+
+        $tA = array_count_values(str_split($t, 1));
+        $sA = array_count_values(str_split($s, 1));
+
+        foreach ($tA as $key => $value) {
+            if (isset($sA[$key]) && $value == $sA[$key]) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
+
+        //solution 2 - bad
+//        $len = strlen($t);
+//        for ($i = 0 ; $i <$len; $i++){
+//            $pos = strpos(($t), $s[$i]);
+//            if( $pos !== false) {
+//                $t = substr($t, 0, $pos) . substr($t, $pos + 1, strlen($t) - $pos);
+//            } else {
+//                return false;
+//            }
+//        }
+//        return true;
+    }
 }

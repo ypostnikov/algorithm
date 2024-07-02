@@ -111,3 +111,10 @@ var_dump( "Получ - ", $letCode->spawn($str) );
 echo "<br>";
 var_dump("Ожида - ", "A4B3C2XYZD4E3F3A6B28");
 
+$str1 = "anagtam";
+$str2 = "nbgbram";
+echo "<br>";
+var_dump( $str1,$str2, "anagram:", $letCode->isAnagram($str1, $str2));
+echo "<br>";
+
+
