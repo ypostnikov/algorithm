@@ -19,7 +19,7 @@ final class LetCode
      * @param int $target
      * @return array|int[]
      */
-    public  function twoSum(array $nums, int $target): array
+    public function twoSum(array $nums, int $target): array
     {
         $len = count($nums);
         for ($i = 0; $i < $len; $i++) {
@@ -92,7 +92,7 @@ final class LetCode
      * @param ListNode $list2
      * @return ListNode
      */
-    public  function mergeTwoLists(ListNode $list1, ListNode $list2)
+    public function mergeTwoLists(ListNode $list1, ListNode $list2)
     {
         $head = $list = new ListNode();
 
@@ -115,7 +115,7 @@ final class LetCode
      * @param String $s
      * @return Boolean
      */
-    public  function isPalindrome(string $s): bool
+    public function isPalindrome(string $s): bool
     {
         $cleared = strtolower(preg_replace('/[^a-z0-9 ]/i', '', $s));
         $cleared = preg_replace('/\s+/', '', $cleared);
@@ -129,10 +129,10 @@ final class LetCode
 
     /**
      * @info @info https://leetcode.com/problems/invert-binary-tree/
-     * @param TreeNode $root
+     * @param TreeNode|null $root
      * @return TreeNode|null
      */
-    public function invertTree(TreeNode $root): ?TreeNode
+    public function invertTree(?TreeNode $root): ?TreeNode
     {
         if (!$root) {
             return $root;
@@ -148,4 +148,35 @@ final class LetCode
         return $root;
     }
 
+    /**
+     * @info Свертка строки. Подсчет количества символов
+     * @param string $str
+     * @return string|null
+     */
+    public function spawn(string $str): ?string
+    {
+        $validation = (is_string($str) && '' !== $str && !preg_match('/[^A-Z]/', $str));
+        $r = "";
+        $len = strlen($str);
+        $counter = 1;
+        if ($validation) {
+            for ($i = 0; $i < $len; $i++) {
+                $char = $str[$i];
+                if ($str[$i + 1] == $char) {
+                    $counter += 1;
+                    continue;
+                } else {
+                    if ($counter > 1) {
+                        $r .= $char . $counter;
+                        $counter = 1;
+                    } else {
+                        $r .= $char;
+                    }
+                }
+            }
+            return $r;
+        } else {
+            return null;
+        }
+    }
 }

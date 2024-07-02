@@ -105,7 +105,9 @@ if (!is_null($r)) {
     echo 'No result bst search';
 }
 
-
-
-
+$str = "AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+echo "<br>";
+var_dump( "Получ - ", $letCode->spawn($str) );
+echo "<br>";
+var_dump("Ожида - ", "A4B3C2XYZD4E3F3A6B28");
 
