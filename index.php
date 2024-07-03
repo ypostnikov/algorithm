@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
 
-use \src\LetCode;
-use \src\SortSearch\SortSearch;
-use \src\Structure\ListNode;
-use \src\Structure\BinarySearchTree;
-use \src\Structure\TreeNode;
+use src\LetCode;
+use src\Tricks;
+use src\SortSearch\SortSearch;
+use src\Structure\ListNode;
+use src\Structure\BinarySearchTree;
+use src\Structure\TreeNode;
+use src\UiHelper;
+
+
+$uiHelper = UiHelper::getInstance();
+
+echo "<h1>Algorithms and Structure</h1>";
 
 const BIG = 10000;
 $ordered_arr = [];
@@ -22,26 +29,30 @@ $searched = rand(1, BIG);
 $numbers = range(1, BIG);
 shuffle($numbers);
 $ss = new SortSearch();
+$uiHelper->outputHeader("Linear search");
 $ss->linear_search($ordered_arr, $searched);
+$uiHelper->outputHeader("Binary search");
 $ss->binary_search($ordered_arr, $searched);
-echo "<div>Quick Sort</div>";
+$uiHelper->outputHeader("Quick Sort");
 $sortArr = $ss->quicksort([87, 56, 4, 3, 2, 178, 6, 1, 789]);
 var_dump($sortArr);
-
-echo "<div>Bubble Sort</div>";
+$uiHelper->outputHeader("Bubble Sort");
 var_dump($ss->bubbleSort([87, 56, 4, 3, 2, 178, 6, 1, 789]));
 
-
-$d = new \src\Tricks();
+$d = new Tricks();
 $f = $d->fact(5);
-echo "<div>Factorail {$f} </div>";
+$uiHelper->outputHeader("Factorail");
+echo "<div>{$f} </div>";
+
 
 
 /**
  * LetCode
  */
 
-print ("<br><b>Let`s Code</b><br>");
+
+echo "<h1>Let's Code challenge</h1>";
+
 $letCode = new LetCode ();
 $nums = [2, 2, 1];
 $target = 4;
@@ -116,5 +127,3 @@ $str2 = "nbgbram";
 echo "<br>";
 var_dump( $str1,$str2, "anagram:", $letCode->isAnagram($str1, $str2));
 echo "<br>";
-
-

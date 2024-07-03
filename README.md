@@ -1,4 +1,4 @@
-**<h2>Algorithms project</h2>**
+**<h2>Algorithms, structure. Let's code task </h2>**
 
 **<h2>Requirements</h2>**
 - docker, docker-compose
@@ -7,8 +7,9 @@
 
 **<h3>Install</h3>** 
 
--<code> docker-compose up -d </code>
+```
+1. Docker-compose up -d 
+2. Composer install packadge inside docker container
 
-<pre>Composer install packadge</pre>
-
-**<h3>Comments</h3>**
+```
+See http://127.0.0.1:8087/

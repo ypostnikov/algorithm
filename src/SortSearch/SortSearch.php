@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace src\SortSearch;
 
+/**
+ * Сортировки
+ */
 final class SortSearch
 {
 
@@ -16,7 +19,6 @@ final class SortSearch
      */
     function binary_search(array $arr, int $search): ?int
     {
-        echo "<div>Binary search:</div>";
         $start = microtime(true);
         $low = 0;
         $high = count($arr) - 1;
@@ -57,7 +59,7 @@ final class SortSearch
         while ($low < $high) {
             if ($search == $arr[$low]) {
                 $time = round(microtime(true) - $start, 6);
-                echo "<div>Linear search:</div> Find key {$low}. Time: {$time}.Iter:{$low}";
+                echo "Find key {$low}. Time: {$time}.Iter:{$low}";
             }
             $low++;
         }
