@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace src\Structure;
 
 /**
- * @info Односвязанный список
+ * @info Односвязнный список
  */
 final class ListNode
 {

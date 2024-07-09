@@ -1,6 +1,6 @@
 # PHP version php:alpine
 
-FROM php:7.4-fpm
+FROM php:8.0-fpm
 
 LABEL description="Algorithms and data structure project"
 

@@ -128,7 +128,7 @@ final class LetCode
     }
 
     /**
-     * @info @info https://leetcode.com/problems/invert-binary-tree/
+     * @info https://leetcode.com/problems/invert-binary-tree/
      * @param TreeNode|null $root
      * @return TreeNode|null
      */
@@ -146,6 +146,21 @@ final class LetCode
         $root->right = $this->invertTree($sourceLeft);
 
         return $root;
+    }
+
+    /**
+     * https://leetcode.com/problems/maximum-depth-of-binary-tree/
+     * @param TreeNode|null $root
+     * @return int
+     */
+    public function maxDepthTree(?TreeNode $root): int
+    {
+        if (!$root) {
+            return 0;
+        }
+        $leftDepth = $this->maxDepthTree($root->left);;
+        $rightDepth = $this->maxDepthTree($root->right);
+        return 1 + max($leftDepth > $rightDepth);
     }
 
     /**
@@ -220,4 +235,18 @@ final class LetCode
 //        }
 //        return true;
     }
+
+    /**
+     * @info https://leetcode.com/problems/balanced-binary-tree/
+     * @param TreeNode $root
+     * @return TreeNode|null
+     */
+    public function isBalancedTreeBinary(?TreeNode $root): ?TreeNode
+    {
+    }
+
+
+
+
 }
+

@@ -10,7 +10,10 @@ use src\SortSearch\SortSearch;
 use src\Structure\ListNode;
 use src\Structure\BinarySearchTree;
 use src\Structure\TreeNode;
+use src\Structure\LinkedList;
 use src\UiHelper;
+
+use  src\example\Base1;
 
 
 $uiHelper = UiHelper::getInstance();
@@ -103,7 +106,9 @@ echo "<br>";
 $iNode = $letCode->invertTree($tNode);
 echo "<br>";
 
-var_dump('InvertNode', $iNode);
+echo "<pre>";
+var_dump("InvertNode" , $iNode);
+echo "</pre>";
 
 echo "<br>";
 //print_r($bst);
@@ -127,3 +132,19 @@ $str2 = "nbgbram";
 echo "<br>";
 var_dump( $str1,$str2, "anagram:", $letCode->isAnagram($str1, $str2));
 echo "<br>";
+
+//print_r(Base1::create());
+
+$limitArray = array_slice($ordered_arr, 0, 5);
+$ll = new LinkedList();
+
+
+foreach ($limitArray as $value) {
+    $ll->append($value);
+}
+
+//echo '<pre>';
+//var_dump($ll);
+//echo '</pre>';
+
+$ll->print();
