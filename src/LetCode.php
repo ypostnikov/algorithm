@@ -245,8 +245,22 @@ final class LetCode
     {
     }
 
-
-
-
+    /**
+     * @info https://leetcode.com/problems/linked-list-cycle/
+     * Decision Fast and Slow pointer
+     * @param $head
+     * @return bool
+     */
+    public function linkedListCycle($head): bool
+    {
+        $fastPointer = $slowPointer = $head;
+        while ($fastPointer && $fastPointer->next) {
+            $slowPointer = $slowPointer->next;
+            $fastPointer = $fastPointer->next->next;
+            if ($slowPointer === $fastPointer) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
-
