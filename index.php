@@ -46,14 +46,9 @@ echo "<div>{$f} </div>";
 
 
 /**
- ***********
  ******
  ******
  ************************** LETCODE******************************************************************************************
- ******
- ******
- ******
- ******
  ******
  ******
  **/
@@ -61,11 +56,6 @@ echo "<div>{$f} </div>";
 echo "<h1>Let's Code challenge</h1>";
 
 $letCode = new LetCode();
-$nums = [2, 2, 1];
-$target = 4;
-var_dump($letCode->twoSum($nums, $target));
-echo "<br>";
-
 echo "<div><b>ListNode</b></div>";
 $list_1 = new ListNode(1);
 $list_1->next = new ListNode(2);
@@ -91,11 +81,9 @@ $bst->insert(9);
 //$rightNode = new TreeNode(7, new TreeNode(6), new TreeNode(9));
 //$tNode = new TreeNode(4, $leftNode, $rightNode);
 
-
 //$leftNode = new TreeNode(1);
 $rightNode = new TreeNode(3, null, new TreeNode(1));
 $tNode = new TreeNode(2, null, $rightNode);
-
 
 echo "<br>";
 //var_dump($tNode);
@@ -118,18 +106,6 @@ if (!is_null($r)) {
 } else {
     echo 'No result bst search';
 }
-
-$str = "AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB";
-echo "<br>";
-var_dump("Получ - ", $letCode->spawn($str));
-echo "<br>";
-var_dump("Ожида - ", "A4B3C2XYZD4E3F3A6B28");
-
-$str1 = "anagtam";
-$str2 = "nbgbram";
-echo "<br>";
-var_dump($str1, $str2, "anagram:", $letCode->isAnagram($str1, $str2));
-echo "<br>";
 
 //print_r(Base1::create());
 

@@ -40,8 +40,8 @@ class LetCodeTest extends TestCase
         $this->assertEquals(true, $r);
     }
 
-    public function testValidPalindrome() {
-
+    public function testValidPalindrome()
+    {
         $str = "A man, a plan, a canal: Panama";
         $r = $this->le->isPalindrome($str);
         $this->assertEquals(true, $r);
@@ -49,5 +49,23 @@ class LetCodeTest extends TestCase
         $str = "race a car";
         $r = $this->le->isPalindrome($str);
         $this->assertEquals(false, $r);
+    }
+
+    public function testConvolution()
+    {
+        $str = 'AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB';
+        $r = $this->le->convolution($str);
+        $expected ="A4B3C2XYZD4E3F3A6B28";
+        $this->assertEquals($expected, $r, 'are not equals');
+    }
+
+    public function testTwoSum()
+    {
+        $letCode = new LetCode();
+        $nums = [2, 2, 1];
+        $target = 4;
+        $indexTarget = [0,1];
+        $r = $letCode->twoSum($nums, $target);
+        $this->assertEquals($indexTarget, $r, 'are not equals');
     }
 }

@@ -168,16 +168,16 @@ class LetCode
      * @param string $str
      * @return string|null
      */
-    public function spawn(string $str): ?string
+    public function convolution(string $str): ?string
     {
-        $validation = (is_string($str) && '' !== $str && !preg_match('/[^A-Z]/', $str));
+        $validation = ('' !== $str && !preg_match('/[^A-Z]/', $str));
         $r = "";
         $len = strlen($str);
         $counter = 1;
         if ($validation) {
             for ($i = 0; $i < $len; $i++) {
                 $char = $str[$i];
-                if ($str[$i + 1] == $char) {
+                if (isset($str[$i + 1]) && $str[$i + 1] === $char) {
                     $counter += 1;
                     continue;
                 } else {
