@@ -13,9 +13,6 @@ use src\Structure\TreeNode;
 use src\Structure\LinkedList;
 use src\UiHelper;
 
-use  src\example\Base1;
-
-
 $uiHelper = UiHelper::getInstance();
 
 echo "<h1>Algorithms and Structure</h1>";
@@ -48,21 +45,26 @@ $uiHelper->outputHeader("Factorail");
 echo "<div>{$f} </div>";
 
 
-
 /**
- * LetCode
- */
-
+ ***********
+ ******
+ ******
+ ************************** LETCODE******************************************************************************************
+ ******
+ ******
+ ******
+ ******
+ ******
+ ******
+ **/
 
 echo "<h1>Let's Code challenge</h1>";
 
-$letCode = new LetCode ();
+$letCode = new LetCode();
 $nums = [2, 2, 1];
 $target = 4;
 var_dump($letCode->twoSum($nums, $target));
 echo "<br>";
-$r = $letCode->validParentheses("(])");
-var_dump($r);
 
 echo "<div><b>ListNode</b></div>";
 $list_1 = new ListNode(1);
@@ -75,10 +77,6 @@ $list_2->next = new ListNode(3);
 $list_2->next->next = new ListNode(4);
 $r = $letCode->mergeTwoLists($list_1, $list_2);
 var_dump($r);
-
-echo "<br>";
-$pal = "A man, a plan, a canal: Panama";
-var_dump($letCode->isPalindrome($pal));
 
 echo "<br>";
 $bst = new BinarySearchTree(4);
@@ -107,7 +105,7 @@ $iNode = $letCode->invertTree($tNode);
 echo "<br>";
 
 echo "<pre>";
-var_dump("InvertNode" , $iNode);
+var_dump("InvertNode", $iNode);
 echo "</pre>";
 
 echo "<br>";
@@ -123,21 +121,20 @@ if (!is_null($r)) {
 
 $str = "AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 echo "<br>";
-var_dump( "Получ - ", $letCode->spawn($str) );
+var_dump("Получ - ", $letCode->spawn($str));
 echo "<br>";
 var_dump("Ожида - ", "A4B3C2XYZD4E3F3A6B28");
 
 $str1 = "anagtam";
 $str2 = "nbgbram";
 echo "<br>";
-var_dump( $str1,$str2, "anagram:", $letCode->isAnagram($str1, $str2));
+var_dump($str1, $str2, "anagram:", $letCode->isAnagram($str1, $str2));
 echo "<br>";
 
 //print_r(Base1::create());
 
 $limitArray = array_slice($ordered_arr, 0, 5);
 $ll = new LinkedList();
-
 
 foreach ($limitArray as $value) {
     $ll->append($value);

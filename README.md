@@ -12,4 +12,10 @@
 2. Composer install packadge inside docker container
 
 ```
+
+**<h3>Tests</h3>** 
+Go to docker container  docker exec -it {} /bin/bash and run
+```
+vendor/bin/phpunit
+```
 See http://127.0.0.1:8087/

@@ -41,7 +41,6 @@ final class LinkedList
      */
     public function insert(int $index, $val): void {
     //@todo  -- вставка  элемента в определенную позицию
-
     }
 
     /**

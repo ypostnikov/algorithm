@@ -10,7 +10,7 @@ use src\Structure\TreeNode;
 /**
  *
  */
-final class LetCode
+class LetCode
 {
 
     /**
@@ -224,16 +224,17 @@ final class LetCode
         return true;
 
         //solution 2 - bad
-//        $len = strlen($t);
-//        for ($i = 0 ; $i <$len; $i++){
-//            $pos = strpos(($t), $s[$i]);
-//            if( $pos !== false) {
-//                $t = substr($t, 0, $pos) . substr($t, $pos + 1, strlen($t) - $pos);
-//            } else {
-//                return false;
-//            }
-//        }
-//        return true;
+/*        $len = strlen($t);
+        for ($i = 0 ; $i <$len; $i++){
+            $pos = strpos(($t), $s[$i]);
+            if( $pos !== false) {
+                $t = substr($t, 0, $pos) . substr($t, $pos + 1, strlen($t) - $pos);
+            } else {
+                return false;
+            }
+        }
+        return true;
+*/
     }
 
     /**
