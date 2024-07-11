@@ -92,7 +92,7 @@ class LetCode
      * @param ListNode $list2
      * @return ListNode
      */
-    public function mergeTwoLists(ListNode $list1, ListNode $list2)
+    public function mergeTwoSortedLists(ListNode $list1, ListNode $list2)
     {
         $head = $list = new ListNode();
 
@@ -160,7 +160,7 @@ class LetCode
         }
         $leftDepth = $this->maxDepthTree($root->left);;
         $rightDepth = $this->maxDepthTree($root->right);
-        return 1 + max($leftDepth > $rightDepth);
+        return 1 + max($leftDepth, $rightDepth);
     }
 
     /**

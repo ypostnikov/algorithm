@@ -8,13 +8,15 @@
 **<h3>Install</h3>** 
 
 ```
-1. Docker-compose up -d 
+1. Docker-compose up -d
 2. Composer install packadge inside docker container
 
 ```
 
 **<h3>Tests</h3>** 
-Go to docker container  docker exec -it {} /bin/bash and run
+Go to docker container 
+```docker exec -it {containerId} /bin/bash``` and run
+
 ```
 vendor/bin/phpunit
 ```
