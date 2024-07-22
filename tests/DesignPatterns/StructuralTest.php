@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns;
 
 use DesignPatterns\Structural\Adapter\BotAnton;
@@ -9,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 class StructuralTest extends TestCase
 {
-
     public function testAdapter()
     {
         $clerk = new GovermentClerk();

@@ -9,33 +9,33 @@ namespace src\Structure;
  */
 final class BinarySearchTree
 {
-
-    public ?TreeNode  $root= null;
+    public ?TreeNode $root = null;
 
     public function __construct(int $value = null)
     {
-        if($value) {
+        if ($value) {
             $this->root = new TreeNode($value);
         }
-   }
+    }
 
     /**
      * @param int $value
      * @return TreeNode|null
      */
-   public function search(int $value): ?TreeNode{
-       $node = $this->root;
-       while($node) {
-           if ($value > $node->val) {
-               $node = $node->right;
-           } elseif ($value < $node->val) {
-               $node = $node->left;
-           } else {
-               break;
-           }
-       }
-       return $node;
-   }
+    public function search(int $value): ?TreeNode
+    {
+        $node = $this->root;
+        while ($node) {
+            if ($value > $node->val) {
+                $node = $node->right;
+            } elseif ($value < $node->val) {
+                $node = $node->left;
+            } else {
+                break;
+            }
+        }
+        return $node;
+    }
 
     /**
      * @param int $value
@@ -48,7 +48,7 @@ final class BinarySearchTree
             return $this->root = new TreeNode($value);
         }
 
-        while($node) {
+        while ($node) {
             if ($value > $node->val) {
                 if ($node->right) {
                     $node = $node->right;

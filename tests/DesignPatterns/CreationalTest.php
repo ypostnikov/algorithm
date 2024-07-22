@@ -12,7 +12,6 @@ use InvalidArgumentException;
 
 class CreationalTest extends TestCase
 {
-
     public function testFactoryMethod()
     {
         $autoFactory = new AutoFactory();

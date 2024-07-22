@@ -39,8 +39,9 @@ final class LinkedList
      * @param $val
      * @return void
      */
-    public function insert(int $index, $val): void {
-    //@todo  -- вставка  элемента в определенную позицию
+    public function insert(int $index, $val): void
+    {
+        //@todo  -- вставка  элемента в определенную позицию
     }
 
     /**

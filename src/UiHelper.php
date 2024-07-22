@@ -6,7 +6,6 @@ namespace src;
 
 class UiHelper
 {
-
     /**
      * @var UiHelper|null
      */

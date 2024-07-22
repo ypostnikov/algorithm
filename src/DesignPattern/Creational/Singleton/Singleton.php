@@ -7,7 +7,6 @@ namespace DesignPattern\Creational\FactoryMethod;
 use Exception;
 
 final class Singleton
-
 {
     private static ?Singleton $instance = null;
 
@@ -21,6 +20,7 @@ final class Singleton
         }
         return self::$instance;
     }
+
     private function __construct()
     {
     }

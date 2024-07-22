@@ -1,12 +1,11 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace DesignPattern\Creational\FactoryMethod;
 
-class Pego implements  Transport
+class Pego implements Transport
 {
-
     /**
      * @return mixed
      */

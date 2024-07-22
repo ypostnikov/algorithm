@@ -11,5 +11,4 @@ interface Clerk
     public function out();
 
     public function write(): string;
-
 }

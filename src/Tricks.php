@@ -6,7 +6,6 @@ namespace src;
 
 final class Tricks
 {
-
     /**
      * Рекурсия. Разделяй и властвуй
      * @return void
@@ -29,4 +28,3 @@ final class Tricks
         return $n * $this->fact($n - 1);
     }
 }
-

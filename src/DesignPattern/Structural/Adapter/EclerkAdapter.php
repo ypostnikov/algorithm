@@ -6,7 +6,6 @@ namespace DesignPatterns\Structural\Adapter;
 
 class EclerkAdapter implements Clerk
 {
-
     /**
      * @param EClerk $clerk
      */

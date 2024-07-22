@@ -9,7 +9,6 @@ namespace src\SortSearch;
  */
 final class SortSearch
 {
-
     /**
      * @info Бинарный поиск
      * Сложность O(n log n)
@@ -17,7 +16,7 @@ final class SortSearch
      * @param int $search
      * @return int|null
      */
-    function binary_search(array $arr, int $search): ?int
+    public function binary_search(array $arr, int $search): ?int
     {
         $start = microtime(true);
         $low = 0;
@@ -50,7 +49,7 @@ final class SortSearch
      * @param int $search
      * @return void
      */
-    function linear_search(array $arr, int $search): void
+    public function linear_search(array $arr, int $search): void
     {
         //O(n)
         $start = microtime(true);
@@ -71,7 +70,7 @@ final class SortSearch
      * @param array $arr
      * @return array
      */
-    function bubbleSort(array $arr): array
+    public function bubbleSort(array $arr): array
     {
         $len = count($arr);
         for ($i = 0; $i < $len - 1; $i++) {

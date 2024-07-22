@@ -19,7 +19,7 @@ final class ListNode
      */
     public ?ListNode $next = null;
 
-    function __construct(int $val = 0, ListNode $next = null)
+    public function __construct(int $val = 0, ListNode $next = null)
     {
         $this->val = $val;
         $this->next = $next;

@@ -9,7 +9,6 @@ use DesignPattern\Creational\FactoryMethod\Singleton;
 
 class SingletonTest extends TestCase
 {
-
     public function testUniqueness()
     {
         $firstCall = Singleton::getInstance();

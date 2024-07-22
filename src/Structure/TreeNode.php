@@ -10,7 +10,7 @@ final class TreeNode
     public ?TreeNode $left = null;
     public ?TreeNode $right = null;
 
-    function __construct(int $val = 0, TreeNode $left = null, TreeNode $right = null)
+    public function __construct(int $val = 0, TreeNode $left = null, TreeNode $right = null)
     {
         $this->val = $val;
         $this->left = $left;
@@ -20,7 +20,7 @@ final class TreeNode
     /**
      * @return int
      */
-    function getValue(): int
+    public function getValue(): int
     {
         return $this->val;
     }
