@@ -14,7 +14,8 @@ class LetCodeTest extends TestCase
 
     public function setUp(): void
     {
-        echo $this->getName();
+        static $count = 0;
+        echo $count++ .".". $this->getName() . "\n\n";
         $this->le = new LetCode();
     }
 
@@ -89,18 +90,19 @@ class LetCodeTest extends TestCase
         $bst->insert(1);
         $bst->insert(6);
         $bst->insert(9);
-        $target = 6 ;
+        $target = 6;
         $r = $bst->search($target);
         $this->assertEquals($target, $r->getValue(), 'are not equals');
-        $this->assertNotEquals(300, $bst->search($target),'are equal');
+        $this->assertNotEquals(300, $bst->search($target), 'are equal');
     }
 
-    public function testMergeTwoList() {
-          $list_1 = new ListNode(10);
-          $list_2 = new ListNode(2);
-          $list_2->next = new ListNode(18);
-          $r = $this->le->mergeTwoSortedLists($list_1, $list_2);
-          $expected=10;
-          $this->assertEquals( $expected,$r->next->val);
+    public function testMergeTwoList()
+    {
+        $list_1 = new ListNode(10);
+        $list_2 = new ListNode(2);
+        $list_2->next = new ListNode(18);
+        $r = $this->le->mergeTwoSortedLists($list_1, $list_2);
+        $expected = 10;
+        $this->assertEquals($expected, $r->next->val);
     }
 }
