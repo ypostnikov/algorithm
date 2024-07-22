@@ -65,4 +65,4 @@ $ll = new LinkedList();
 foreach ($limitArray as $value) {
     $ll->append($value);
 }
-$ll->print();
+//$ll->print();

@@ -174,25 +174,25 @@ class LetCode
         $r = "";
         $len = strlen($str);
         $counter = 1;
-        if ($validation) {
-            for ($i = 0; $i < $len; $i++) {
-                $char = $str[$i];
-                if (isset($str[$i + 1]) && $str[$i + 1] === $char) {
-                    $counter += 1;
-                    continue;
-                } else {
-                    if ($counter > 1) {
-                        $r .= $char . $counter;
-                        $counter = 1;
-                    } else {
-                        $r .= $char;
-                    }
-                }
-            }
-            return $r;
-        } else {
+        if (!$validation) {
             return null;
         }
+
+        for ($i = 0; $i < $len; $i++) {
+            $char = $str[$i];
+            if (isset($str[$i + 1]) && $str[$i + 1] === $char) {
+                $counter += 1;
+                continue;
+            } else {
+                if ($counter > 1) {
+                    $r .= $char . $counter;
+                    $counter = 1;
+                } else {
+                    $r .= $char;
+                }
+            }
+        }
+        return $r;
     }
 
 
