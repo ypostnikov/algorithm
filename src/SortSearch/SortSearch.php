@@ -16,7 +16,7 @@ final class SortSearch
      * @param int $search
      * @return int|null
      */
-    public function binary_search(array $arr, int $search): ?int
+    public function binarySeatch(array $arr, int $search): ?int
     {
         $start = microtime(true);
         $low = 0;
@@ -49,7 +49,7 @@ final class SortSearch
      * @param int $search
      * @return void
      */
-    public function linear_search(array $arr, int $search): void
+    public function linearSearch(array $arr, int $search): void
     {
         //O(n)
         $start = microtime(true);

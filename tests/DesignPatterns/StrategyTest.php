@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 class StrategyTest extends TestCase
 {
-
     public function testStrategy()
     {
         $c = ["orange", "banana", "apple", "raspberry"];
