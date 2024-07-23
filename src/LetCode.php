@@ -7,9 +7,6 @@ namespace src;
 use src\Structure\ListNode;
 use src\Structure\TreeNode;
 
-/**
- *
- */
 class LetCode
 {
 
@@ -71,12 +68,16 @@ class LetCode
             $char = $str[$i];
             if (array_key_exists($char, $accordance)) {
                 $stack->push($char);
-            } else if ($stack->count() == 0) {
-                return false;
-            } else if ($reverseAccordance[$char] == $stack->top()) {
-                $stack->pop();
             } else {
-                return false;
+                if ($stack->count() == 0) {
+                    return false;
+                } else {
+                    if ($reverseAccordance[$char] == $stack->top()) {
+                        $stack->pop();
+                    } else {
+                        return false;
+                    }
+                }
             }
         }
         if ($stack->isEmpty()) {
@@ -202,8 +203,8 @@ class LetCode
      * @param String $t
      * @return Boolean
      */
-    function isAnagram(string $s, string $t): bool {
-
+    function isAnagram(string $s, string $t): bool
+    {
         $len = strlen($t);
         if ($len != strlen($s)) {
             return false;
@@ -248,5 +249,17 @@ class LetCode
             }
         }
         return false;
+    }
+
+    /**
+     * @param int $n
+     * @return int
+     */
+    public function fact(int $n): int
+    {
+        if ($n == 1) {
+            return 1;
+        }
+        return $n * $this->fact($n - 1);
     }
 }

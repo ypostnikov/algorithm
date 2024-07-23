@@ -31,23 +31,6 @@ $uiHelper->outputHeader("Linear search");
 $ss->linearSearch($ordered_arr, $searched);
 $uiHelper->outputHeader("Binary search");
 $ss->binarySearch($ordered_arr, $searched);
-$uiHelper->outputHeader("Quick Sort");
-$sortArr = $ss->quicksort([87, 56, 4, 3, 2, 178, 6, 1, 789]);
-var_dump($sortArr);
-$uiHelper->outputHeader("Bubble Sort");
-var_dump($ss->bubbleSort([87, 56, 4, 3, 2, 178, 6, 1, 789]));
-
-$d = new Tricks();
-$f = $d->fact(5);
-$uiHelper->outputHeader("Factorail");
-echo "<div>{$f} </div>";
-
-
-/**
- ******
- ************************** LETCODE******************************************************************************************
- ******
- **/
 
 echo "<h1>Let's Code challenge</h1>";
 $letCode = new LetCode();

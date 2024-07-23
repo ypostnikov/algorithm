@@ -4,6 +4,7 @@ namespace tests;
 
 use PHPUnit\Framework\TestCase;
 use src\LetCode;
+use src\SortSearch\SortSearch;
 use src\Structure\BinarySearchTree;
 use src\Structure\ListNode;
 use src\Structure\TreeNode;
@@ -12,11 +13,14 @@ class LetCodeTest extends TestCase
 {
     private LetCode $le;
 
+    private SortSearch $sortSearch;
+
     public function setUp(): void
     {
         static $count = 0;
-        echo $count++ .".". $this->getName() . "\n\n";
+        echo $count++ . "." . $this->getName() . "\n\n";
         $this->le = new LetCode();
+        $this->sortSearch = new SortSearch();
     }
 
     public function testValidAnagram()
@@ -105,4 +109,26 @@ class LetCodeTest extends TestCase
         $expected = 10;
         $this->assertEquals($expected, $r->next->val);
     }
+
+    public function testQuickSort()
+    {
+        $t = [87, 56, 4, 3, 2, 178, 6, 1, 789];
+        $expected = [1, 2, 3, 4, 6, 56, 87, 178, 789];
+        $sortArr = $this->sortSearch->quicksort($t);
+        $this->assertEqualsCanonicalizing($expected, $sortArr);
+    }
+
+    public function testBubbleSort()
+    {
+        $t = [87, 56, 4, 3, 2, 178, 6, 1, 789];
+        $expected = [1, 2, 3, 4, 6, 56, 87, 178, 789];
+        $sortArr = $this->sortSearch->bubbleSort($t);
+        $this->assertEqualsCanonicalizing($expected, $sortArr);
+    }
+     public function testFactorial()
+     {
+         $r = $this->le->fact(5);
+         $expected = 120;
+         $this->assertEquals($expected, $r);
+     }
 }
