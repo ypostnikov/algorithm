@@ -30,7 +30,7 @@ $ss = new SortSearch();
 $uiHelper->outputHeader("Linear search");
 $ss->linearSearch($ordered_arr, $searched);
 $uiHelper->outputHeader("Binary search");
-$ss->binarySeatch($ordered_arr, $searched);
+$ss->binarySearch($ordered_arr, $searched);
 $uiHelper->outputHeader("Quick Sort");
 $sortArr = $ss->quicksort([87, 56, 4, 3, 2, 178, 6, 1, 789]);
 var_dump($sortArr);
