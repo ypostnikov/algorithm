@@ -262,4 +262,38 @@ class LetCode
         }
         return $n * $this->fact($n - 1);
     }
+
+    /**
+     * @info https://leetcode.com/problems/contains-duplicate/
+     * @param array $nums
+     * @return bool
+     */
+    public function containsDuplicate(array $nums): bool
+    {
+        $t = [];
+        foreach ($nums as $value) {
+            if (isset($t[$value])) {
+                return true;
+            }
+            $t[$value] = 1;
+        }
+        return false;
+    }
+
+    /**
+     * @info https://leetcode.com/problems/reverse-linked-list/description/
+     * @param $head
+     * @return ListNode
+     */
+    public function reverseList($head): ListNode
+    {
+        if (!$head->next) {
+            return $head;
+        }
+        $newHead = $this->reverseList($head->next);
+        $head->next->next = $head;
+        $head->next = null;
+        return $newHead;
+    }
 }
+

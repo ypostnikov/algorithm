@@ -125,10 +125,32 @@ class LetCodeTest extends TestCase
         $sortArr = $this->sortSearch->bubbleSort($t);
         $this->assertEqualsCanonicalizing($expected, $sortArr);
     }
-     public function testFactorial()
-     {
-         $r = $this->le->fact(5);
-         $expected = 120;
-         $this->assertEquals($expected, $r);
-     }
+
+    public function testFactorial()
+    {
+        $r = $this->le->fact(5);
+        $expected = 120;
+        $this->assertEquals($expected, $r);
+    }
+
+    public function testContainsDuplicate()
+    {
+        $t = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 1];
+        $expected = true;
+        $r = $this->le->containsDuplicate($t);
+        $this->assertEquals($expected, $r);
+
+        $t = [1, 2, 3, 4, 5];
+        $expected = false;
+        $r = $this->le->containsDuplicate($t);
+        $this->assertEquals($expected, $r);
+    }
+
+    public function testReverseList()
+    {
+        $l = new ListNode(1, new ListNode(2, new ListNode (3, new ListNode(4, new ListNode (5)))));
+        $expected = new ListNode(5, new ListNode(4, new ListNode (3, new ListNode(2, new ListNode (1)))));
+        $r = $this->le->reverseList($l);
+        $this->assertEquals($expected, $r);
+    }
 }
