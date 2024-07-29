@@ -161,4 +161,12 @@ class LetCodeTest extends TestCase
         $expected = [9, 8, 7, 6, 5, 4, 3, 2, 1];
         $this->assertEquals($expected, $r);
     }
+
+    public function testMajorityElement()
+    {
+        $l = [3, 2, 3];
+        $r = $this->le->majorityElement($l);
+        $expected = 3;
+        $this->assertEquals($expected, $r);
+    }
 }

@@ -295,5 +295,26 @@ class LetCode
         $head->next = null;
         return $newHead;
     }
+
+    public function majorityElement(array $nums): int
+    {
+        if (count($nums) == 1) {
+            return $nums[0];
+        }
+        $tmp = [];
+        $maxV = $maxK = 1;
+        foreach ($nums as $num) {
+            if (isset($tmp[$num])) {
+                $tmp[$num] += 1;
+                if ($maxV <= $tmp[$num]) {
+                    $maxV = $tmp[$num];
+                    $maxK = $num;
+                }
+            } else {
+                $tmp[$num] = 1;
+            }
+        }
+        return $maxK;
+    }
 }
 
