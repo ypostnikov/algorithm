@@ -116,4 +116,22 @@ final class SortSearch
         }
         return array_merge($this->quicksort($left), array($pivot), $this->quicksort($right));
     }
+
+    /**
+     * @param array $arr
+     * @return array
+     */
+    public function inPlace(array $arr): array
+    {
+        //O(1)
+        //Сортировка в обратном порядке, без использования дополнительной памяти
+        $len = floor(count($arr) / 2);
+        for ($i = 0; $i < $len; $i++) {
+            $temp = $arr[$i];
+            $j = count($arr) - 1 - $i;
+            $arr[$i] = $arr[$j];
+            $arr[$j] = $temp;
+        }
+        return $arr;
+    }
 }
